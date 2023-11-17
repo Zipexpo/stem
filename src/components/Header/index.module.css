@@ -1,0 +1,8 @@
+.header_div {
+    @apply w-full bg-gradient-to-r from-purple-400 via-pink-500 to-red-500;
+    @apply h-24 text-center flex justify-center items-center;
+}
+.header_title {
+    @apply prose prose-2xl text-center text-white drop-shadow-xl font-bold;
+    @apply hover:animate-bounce ;
+}
