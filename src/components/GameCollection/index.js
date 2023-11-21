@@ -4,6 +4,11 @@ const gameList = [
         key: "binary_game",
         title: "Binary Game",
         description: "Challenge your quick math skill."
+    },
+    {
+        key: "add4bit_game",
+        title: "Add 4 bit",
+        description: "Simulate the 4 bits adder with logic gate"
     }
 ]
 export default function (){
@@ -18,7 +23,7 @@ export default function (){
                 <div className="relative">
                     <img width="200" height="200" className="w-full"/>
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                        <Link to={`binary-game`}>
+                        <Link to={d.key}>
                             <btn className="rounded-md bg-cyan-200 hover:bg-cyan-400 py-2 px-4 font-bold uppercase">
                                 Play
                             </btn>

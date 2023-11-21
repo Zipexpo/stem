@@ -6,6 +6,7 @@ import {
 import MainLayout from "./layout/MainLayout"
 import Binarygame from "./pages/Binarygame"
 import Home from "./pages/Home"
+import Add4Bit from "./pages/Add4Bit";
 
 
 const router = createBrowserRouter([
@@ -16,9 +17,15 @@ const router = createBrowserRouter([
     </MainLayout>
   },
   {
-    path: "binary-game",
+    path: "binary_game",
     element: <MainLayout>
       <Binarygame/>
+    </MainLayout>,
+  },
+  {
+    path: "add4bit_game",
+    element: <MainLayout>
+      <Add4Bit/>
     </MainLayout>,
   }
 ]);
