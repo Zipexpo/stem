@@ -2,9 +2,10 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
 import { create } from 'zustand'
 import { Canvas, useFrame } from '@react-three/fiber'
-import {Text, Environment, Extrude, Grid} from '@react-three/drei'
+import {Environment, Grid} from '@react-three/drei'
 import {Shape} from "three";
 import Fireflies from '../../components/3Dcoponents/Fireflies'
+import BiGroup from "./BiGroup"
 
 const useGameStore = create((set) => ({
     timer: 60,
@@ -40,14 +41,10 @@ export default function({circleRadius=0.5}) {
             raycaster={{params: {Points: {threshold: 0.01}}}}
             camera={{position: [0, 15, 9], fov: 25}}
         >
-            <ambientLight intensity={0.5} />
+            <ambientLight intensity={2}/>
             <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/potsdamer_platz_1k.hdr" />
             <Fireflies count={20} radius={80} colors={['orange']} />
-            <group rotation={[-Math.PI/2,0,0]}>
-                <Extrude args={[roundBoxShape, {depth:0.1,bevelEnabled: false}]}>
-                    <meshStandardMaterial color={'#797979'} />
-                </Extrude>
-            </group>
+            <BiGroup roundBoxShape={roundBoxShape}/>
             <Grid position={[0, -0.02, 0]} args={[100,100]} {...{
                 cellSize: 5 / 5 / 5,
                 cellThickness: 1,
